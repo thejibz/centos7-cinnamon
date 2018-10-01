@@ -1,0 +1,1 @@
+command vagrant ssh-config > vagrant-ssh-config && ssh -YAC -F vagrant-ssh-config default

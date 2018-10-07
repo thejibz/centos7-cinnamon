@@ -17,3 +17,7 @@ Centos7 with:
 Vagrant plugins:
  - vagrant-vbguest
  - vagrant-proxyconf (optional)
+
+## Install
+Just "vagrant up" then "vagrant reload" and enjoy !
+

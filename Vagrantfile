@@ -25,6 +25,7 @@ Vagrant.configure("2") do |config|
 	#
 	# prerequisites
 	#
+	config.vm.provision "shell", inline: "yum update -y"
 	config.vm.provision "shell", inline: "localectl set-keymap fr && localectl set-x11-keymap fr"
 	config.vm.provision "shell", path: "./setup/setup_dnf.sh"
 	config.vm.provision "shell", path: "./setup/setup_git.sh"
@@ -76,21 +77,14 @@ Vagrant.configure("2") do |config|
 	#
 	# cleanup
 	#
+	config.vm.provision "shell", inline: "yum update -y"
 	config.vm.provision "shell", inline: "rm -rf /tmp/*"
 
 
 	#
 	# sync folders setup
 	#
-	config.vm.synced_folder "C:\\Utilisateurs\\a528561\\workspace\\shared", "/shared", disabled: "true"
-	# workspace
-	#config.vm.synced_folder "C:\\Utilisateurs\\a528561\\workspace", "/workspace"
-	# maven
-	#config.vm.synced_folder "C:\\Utilisateurs\\a528561\\.m2", "/home/vagrant/.m2"
-	# gradle
-	#config.vm.synced_folder "C:\\Utilisateurs\\a528561\\.gradle", "/home/vagrant/.gradle"
-	# docker volumes 
-	#config.vm.synced_folder "C:\\Utilisateurs\\a528561\\volumes", "/var/lib/docker/volumes"
+	config.vm.synced_folder "C:\\shared", "/shared", disabled: "true"
 
 	#
 	# port forwarding setup

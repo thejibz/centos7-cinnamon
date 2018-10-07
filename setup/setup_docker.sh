@@ -60,8 +60,4 @@ alias dockercleanv='printf "\n>>> Deleting dangling volumes\n\n" && docker volum
 alias dclean='dockercleanc || true && dockercleanv || true && dockercleani'
 EOF
 
-# start transproxy
-chown vagrant:vagrant /home/vagrant/transparent_proxy
-runuser -l vagrant bash -c "bash /home/vagrant/transparent_proxy"
-
 echo -e "# DONE: $me #"
